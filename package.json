@@ -13,5 +13,12 @@
     "Ramon",
     "Munoz",
     "Ramon Was Here"
-  ]
+  ],
+  "license": "UNLICENSE",
+  "main": "index.js",
+  "repository": "ramonemunoz/ramon",
+  "author": {
+    "name": "Ramon Munoz",
+    "url": "https://ramon-munoz.com"
+  }
 }
