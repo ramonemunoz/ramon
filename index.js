@@ -15,7 +15,6 @@ welcome({
 });
 
 console.log(`
-
 Ramon Munoz - FrontEnd Engineer
 
 A seasoned front-end developer and web team leader. 
