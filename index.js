@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 
 // Imports
-const clearConsole = require('clear-any-console');
+const pkgJSON = require('./package.json');
+const welcome = require('cli-welcome');
 
-// Clears the console.
-clearConsole();
+welcome({
+    title: pkgJSON.name,
+    tagline: `Get to know Ramon`,
+    description: pkgJSON.description,
+    version: pkgJSON.version,
+    bgColor: `#efc06a`,
+	bold: true,
+	clear: true,
+});
+
 console.log(`
 
 Ramon Munoz - FrontEnd Engineer
