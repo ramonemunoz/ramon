@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+
+// Imports
+const clearConsole = require('clear-any-console');
+
+// Clears the console.
+clearConsole();
 console.log(`
 
 Ramon Munoz - FrontEnd Engineer
