@@ -3,6 +3,8 @@
 // Imports
 const pkgJSON = require('./package.json');
 const welcome = require('cli-welcome');
+const chalk = require('chalk');
+
 
 welcome({
     title: pkgJSON.name,
@@ -15,7 +17,7 @@ welcome({
 });
 
 console.log(`
-Ramon Munoz - FrontEnd Engineer
+${chalk.hex('#efc06a')(`Ramon Munoz - FrontEnd Engineer`)}
 
 A seasoned front-end developer and web team leader. 
 Excels at coding, testing, launching, and maintaining 
