@@ -1,33 +1,43 @@
 #!/usr/bin/env node
 
 // Imports
-const pkgJSON = require('./package.json');
-const welcome = require('cli-welcome');
-const chalk = require('chalk');
 
+const pkgJSON = require("./package.json");
+const welcome = require("cli-welcome");
+const alert = require("cli-alerts");
 
-welcome({
+const data = require("./utils/data");
+const cli = require("./utils/cli");
+const debug = require("./utils/debug");
+
+const input = cli.input;
+const flags = cli.flags;
+
+(async () => {
+  welcome({
     title: pkgJSON.name,
     tagline: `Get to know Ramon`,
     description: pkgJSON.description,
     version: pkgJSON.version,
     bgColor: `#efc06a`,
-	bold: true,
-	clear: true,
-});
+    bold: true,
+    clear: true,
+  });
 
-console.log(`
-${chalk.hex('#efc06a')(`Ramon Munoz - FrontEnd Engineer`)}
+  input.includes('help') && cli.showHelp(0);
 
-A seasoned front-end developer and web team leader. 
-Excels at coding, testing, launching, and maintaining 
-secure web platforms that deliver on expectations and
-facilitate growth for their organizations. A savvy communicator
-and experienced project manager who enjoys working directly with
-clients, designers, executives, and team members to push the
-envelope and pursue cutting-edge results.
+  console.log(data.name);
 
-Github : https://github.com/ramonemunoz
-Site : https://ramon-munoz.com/
+  console.log(data.bio);
 
-`);
+  if (flags.social) {
+    console.log(data.social);
+  }
+
+  if (flags.ad) {
+    alert({ type: "info", msg: data.ad });
+  }
+
+  // Debug info if needed  
+  debug(flags.debug, cli)
+})();
